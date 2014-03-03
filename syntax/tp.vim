@@ -1,8 +1,8 @@
 " Vim syntax file
-" Language:   FANUC TP
-" Maintainer: Jay Strybis <jay.strybis@gmail.com>
-" URL:        http://github.com/unreal/vim-fanuc-tp
-" License:    MIT
+" Language: FANUC TP
+" Author:   Jay Strybis <jay.strybis@gmail.com>
+" URL:      http://github.com/onerobotics/vim-tp
+" License:  MIT
 
 if exists("b:current_syntax")
   finish
@@ -31,11 +31,11 @@ hi def link     tpConstant          Constant
 " Data
 syn region      tpData              start="DI\[" end="\]" contains=tpNumber,tpIdentifier
 syn region      tpData              start="DO\[" end="\]" contains=tpNumber,tpIdentifier
-syn region      tpData              start="F\[" end="\]" contains=tpNumber,tpIdentifier
+syn region      tpData              start="F\[" end="\]"  contains=tpNumber,tpIdentifier
 syn region      tpData              start="GI\[" end="\]" contains=tpNumber,tpIdentifier
 syn region      tpData              start="GO\[" end="\]" contains=tpNumber,tpIdentifier
 syn region      tpData              start="PR\[" end="\]" contains=tpNumber,tpIdentifier
-syn region      tpData              start="R\[" end="\]" contains=tpNumber,tpIdentifier
+syn region      tpData              start="R\[" end="\]"  contains=tpNumber,tpIdentifier
 syn region      tpData              start="RI\[" end="\]" contains=tpNumber,tpIdentifier
 syn region      tpData              start="RO\[" end="\]" contains=tpNumber,tpIdentifier
 syn region      tpData              start="SI\[" end="\]" contains=tpNumber,tpIdentifier
