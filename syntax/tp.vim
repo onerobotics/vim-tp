@@ -51,7 +51,7 @@ syn region      tpData              start="UTOOL\[" end="\]" contains=tpInteger,
 hi def link     tpData              Type
 
 " Item comment
-syn match       tpItemComment       /\(\d\+\:\)\@<=[a-zA-Z0-9\.# \@\/\\]\+/
+syn match       tpItemComment       /\(\[\d\+\:\)\@<=[a-zA-Z0-9\.# \@\/\\]\+/
 hi def link     tpItemComment       String
 
 
