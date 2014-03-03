@@ -9,19 +9,19 @@ This vim bundle adds syntax highlighting for FANUC's TP programming language.
 
         call pathogen#infect()
 
-- Make a clone of the `vim-karel` repository:
+- Make a clone of the `vim-tp` repository:
 
         $ mkdir -p ~/.vim/bundle
         $ cd ~/.vim/bundle
-        $ git clone https://github.com/onerobotics/vim-karel
+        $ git clone https://github.com/onerobotics/vim-tp
 
 - OR use [vundle](https://github.com/gmarik/vundle), adding this line to your `~/.vimrc`:
 
-        Bundle 'onerobotics/vim-karel'
+        Bundle 'onerobotics/vim-tp'
 
 - OR use git submodules:
 
-        $ git submodule add https://github.com/onerobotics/vim-karel.git bundle/vim-karel
+        $ git submodule add https://github.com/onerobotics/vim-tp.git bundle/vim-tp
         $ git submodule init
 
 ## License ##
