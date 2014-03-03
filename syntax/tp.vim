@@ -67,7 +67,7 @@ syn match       tpFloat             /[\-]\?\d\+\.\d\+/
 hi def link     tpInteger           Number
 hi def link     tpFloat             Float
 
-" Statements
+" Keywords
 syn match       tpKeyword           /\/PROG/
 syn match       tpKeyword           /\/ATTR/
 syn match       tpKeyword           /\/APPL/
