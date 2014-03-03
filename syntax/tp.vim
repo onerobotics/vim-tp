@@ -51,7 +51,7 @@ syn region      tpData              start="UTOOL\[" end="\]" contains=tpInteger,
 hi def link     tpData              Type
 
 " Item comment
-syn match       tpItemComment       /\(\[\d\+\:\)\@<=[a-zA-Z0-9\.# \@\/\\]\+/
+syn match       tpItemComment       /\(\[\d\+\:\)\@<=[^\]]\+/
 hi def link     tpItemComment       String
 
 
@@ -77,7 +77,7 @@ syn match       tpKeyword           /\/APPL/
 syn match       tpKeyword           /\/MN/
 syn match       tpKeyword           /\/POS/
 syn match       tpKeyword           /\/END/
-syn keyword     tpKeyword           ABORT CALL CNT DA DB FINE JMP PAUSE PAYLOAD PULSE RESET START STOP STOP_TRACKING TA TB TIMEOUT UFRAME_NUM UTOOL_NUM VOFFSET WAIT
+syn keyword     tpKeyword           ABORT CALL CNT DA DB FINE JMP Offset PAUSE PAYLOAD PULSE RESET START STOP STOP_TRACKING TA TB TIMEOUT UFRAME_NUM UTOOL_NUM VOFFSET WAIT
 syn match       tpKeyword           /AP_LD/
 syn match       tpKeyword           /ACC/
 syn match       tpKeyword           /CNT/
