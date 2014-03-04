@@ -13,7 +13,7 @@ This vim bundle adds syntax highlighting for FANUC's TP programming language.
 
         $ mkdir -p ~/.vim/bundle
         $ cd ~/.vim/bundle
-        $ git clone https://github.com/onerobotics/vim-tp
+        $ git clone https://github.com/onerobotics/vim-tp.git
 
 - OR use [vundle](https://github.com/gmarik/vundle), adding this line to your `~/.vimrc`:
 
