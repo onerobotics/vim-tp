@@ -55,7 +55,6 @@ hi def link     tpData              Type
 syn match       tpItemComment       /\(\[\d\+\:\)\@<=[^\]]\+/
 hi def link     tpItemComment       String
 
-
 " Strings
 syn region      tpString            start="'" end="'"
 syn region      tpString            start='"' end='"'
@@ -94,6 +93,5 @@ syn match       tpComment           /\(\s*\d*:\s*\)\@<=!.*/
 syn match       tpRemark            /\(\s*\d*:\s*\)\@<=\/\/.*/
 hi def link     tpComment           Comment
 hi def link     tpRemark            Comment
-
 
 let b:current_syntax = "tp"
