@@ -13,8 +13,8 @@ if version < 600
 endif
 
 " Sysvars
-syn match tpSysvar /\.\?\$[a-zA-Z0-9.]\+/
-hi def link tpSysvar Identifier
+syn match       tpSysvar            /\.\?\$[a-zA-Z0-9.]\+/
+hi def link     tpSysvar            Identifier
 
 " Identifiers
 syn match       tpIdentifier        /[a-zA-Z0-9]\+/
@@ -65,14 +65,14 @@ syn region      tpData              start="AR\[" end="\]"     contains=tpInteger
 syn region      tpData              start="R\[" end="\]"      contains=tpInteger,tpItemComment
 syn region      tpData              start="RI\[" end="\]"     contains=tpInteger,tpItemComment
 syn region      tpData              start="RO\[" end="\]"     contains=tpInteger,tpItemComment
-syn region      tpData              start="RSR\[" end="\]"     contains=tpInteger,tpItemComment
+syn region      tpData              start="RSR\[" end="\]"    contains=tpInteger,tpItemComment
 syn region      tpData              start="SI\[" end="\]"     contains=tpInteger,tpItemComment
 syn region      tpData              start="SO\[" end="\]"     contains=tpInteger,tpItemComment
 syn region      tpData              start="SR\[" end="\]"     contains=tpInteger,tpItemComment
 syn region      tpData              start="UI\[" end="\]"     contains=tpInteger,tpItemComment
 syn region      tpData              start="UO\[" end="\]"     contains=tpInteger,tpItemComment
 syn region      tpData              start="VR\[" end="\]"     contains=tpInteger,tpItemComment
-syn region      tpData              start="RESUME_PROG\[" end="\]"  contains=tpInteger,tpItemComment
+syn region      tpData              start="RESUME_PROG\[" end="\]"     contains=tpInteger,tpItemComment
 syn region      tpData              start="TIMER\[" end="\]"  contains=tpInteger,tpItemComment
 syn region      tpData              start="TIMER_OVERFLOW\[" end="\]"  contains=tpInteger,tpItemComment
 syn region      tpData              start="UALM\[" end="\]"   contains=tpInteger,tpItemComment
@@ -147,7 +147,7 @@ hi def link     tpComment           Comment
 hi def link     tpRemark            Comment
 
 " Header stuff
-syn keyword     tpHeader OWNER ASCBIN MNEDITOR COMMENT PROG_SIZE CREATE DATE TIME MODIFIED FILE_NAME VERSION LINE_COUNT MEMORY_SIZE PROTECT READ_WRITE TCD STACK_SIZE TASK_PRIORITY TIME_SLICE BUSY_LAMP_OFF ABORT_REQUEST PAUSE_REQUEST DEFAULT_GROUP CONTROL_CODE
+syn keyword     tpHeader            OWNER ASCBIN MNEDITOR COMMENT PROG_SIZE CREATE DATE TIME MODIFIED FILE_NAME VERSION LINE_COUNT MEMORY_SIZE PROTECT READ_WRITE TCD STACK_SIZE TASK_PRIORITY TIME_SLICE BUSY_LAMP_OFF ABORT_REQUEST PAUSE_REQUEST DEFAULT_GROUP CONTROL_CODE
 hi def link     tpHeader            Define
 
 let b:current_syntax = "tp"
