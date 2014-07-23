@@ -130,7 +130,11 @@ syn match       tpKeyword           /\/APPL/
 syn match       tpKeyword           /\/MN/
 syn match       tpKeyword           /\/POS/
 syn match       tpKeyword           /\/END/
-syn keyword     tpKeyword           ABORT CALL CNT CONDITION END FINE JMP JPOS LPOS LOCK MONITOR OFFSET OVERRIDE PAUSE PAYLOAD POINT_LOGIC PREG PULSE RESET RUN SKIP START STOP STOP_TRACKING TIMEOUT TOOL_OFFSET UFRAME_NUM UNLOCK UTOOL_NUM VOFFSET VREG WAIT
+syn match       tpKeyword           /COL GUARD ADJUST/
+syn match       tpKeyword           /\(LOCK\|UNLOCK\) \(PREG\|VREG\)/
+syn match       tpKeyword           /\(OFFSET\|TOOL_OFFSET\|VOFFSET\) CONDITION/
+syn match       tpKeyword           /SKIP CONDITION/
+syn keyword     tpKeyword           ABORT CALL CNT END FINE JMP JPOS LPOS MONITOR OVERRIDE PAUSE PAYLOAD POINT_LOGIC PULSE RESET RUN START STOP STOP_TRACKING TIMEOUT UFRAME_NUM UTOOL_NUM WAIT
 syn match       tpKeyword           /AP_LD/
 syn match       tpKeyword           /CNT/
 syn match       tpKeyword           /RT_LD/
