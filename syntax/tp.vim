@@ -78,7 +78,7 @@ syn region      tpData              start="TIMER_OVERFLOW\[" end="\]"  contains=
 syn region      tpData              start="UALM\[" end="\]"   contains=tpInteger,tpItemComment
 syn region      tpData              start="UFRAME\[" end="\]" contains=tpInteger,tpItemComment
 syn region      tpData              start="UTOOL\[" end="\]"  contains=tpInteger,tpItemComment
-syn keyword     tpData              ERROR_PROG UFRAME_NUM UTOOL_NUM WAIT Offset Tool_Offset VOFFSET FOUND_POS
+syn keyword     tpData              ERROR_PROG  Offset Tool_Offset VOFFSET FOUND_POS RUN_FIND GET_OFFSET
 hi def link     tpData              Type
 
 " Item comment
@@ -134,10 +134,11 @@ syn match       tpKeyword           /COL GUARD ADJUST/
 syn match       tpKeyword           /\(LOCK\|UNLOCK\) \(PREG\|VREG\)/
 syn match       tpKeyword           /\(OFFSET\|TOOL_OFFSET\|VOFFSET\) CONDITION/
 syn match       tpKeyword           /SKIP CONDITION/
-syn keyword     tpKeyword           ABORT CALL CNT END FINE JMP JPOS LPOS MONITOR OVERRIDE PAUSE PAYLOAD POINT_LOGIC PULSE RESET RUN START STOP STOP_TRACKING TIMEOUT 
+syn keyword     tpKeyword           ABORT CALL CNT END FINE JMP JPOS LPOS MONITOR OVERRIDE PAUSE PAYLOAD POINT_LOGIC PULSE RESET RUN START STOP STOP_TRACKING TIMEOUT UFRAME_NUM UTOOL_NUM WAIT 
 syn match       tpKeyword           /AP_LD/
 syn match       tpKeyword           /CNT/
 syn match       tpKeyword           /RT_LD/
+syn match	tpKeyword           /$WAITTMOUT/
 hi def link     tpKeyword           Keyword
 
 " Comments
