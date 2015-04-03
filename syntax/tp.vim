@@ -12,7 +12,6 @@ if version < 600
   syntax clear
 endif
 
-
 " Sysvars
 syn match       tpSysvar            /\.\?\$[a-zA-Z0-9.]\+/
 hi def link     tpSysvar            Identifier
