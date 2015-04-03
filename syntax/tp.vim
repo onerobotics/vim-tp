@@ -12,8 +12,9 @@ if version < 600
   syntax clear
 endif
 
+
 " Sysvars
-syn match       tpSysvar            /\.\?\$[a-zA-Z0-9.]\+/
+syn match       tpSysvar            /\.\?\$[a-zA-Z0-9.]\+/	
 hi def link     tpSysvar            Identifier
 
 " Identifiers
@@ -78,7 +79,7 @@ syn region      tpData              start="TIMER_OVERFLOW\[" end="\]"  contains=
 syn region      tpData              start="UALM\[" end="\]"   contains=tpInteger,tpItemComment
 syn region      tpData              start="UFRAME\[" end="\]" contains=tpInteger,tpItemComment
 syn region      tpData              start="UTOOL\[" end="\]"  contains=tpInteger,tpItemComment
-syn keyword     tpData              ERROR_PROG
+syn keyword     tpData              ERROR_PROG UFRAME_NUM UTOOL_NUM WAIT Offset Tool_Offset VOFFSET FOUND_POS
 hi def link     tpData              Type
 
 " Item comment
@@ -134,14 +135,16 @@ syn match       tpKeyword           /COL GUARD ADJUST/
 syn match       tpKeyword           /\(LOCK\|UNLOCK\) \(PREG\|VREG\)/
 syn match       tpKeyword           /\(OFFSET\|TOOL_OFFSET\|VOFFSET\) CONDITION/
 syn match       tpKeyword           /SKIP CONDITION/
-syn keyword     tpKeyword           ABORT CALL CNT END FINE JMP JPOS LPOS MONITOR OVERRIDE PAUSE PAYLOAD POINT_LOGIC PULSE RESET RUN START STOP STOP_TRACKING TIMEOUT UFRAME_NUM UTOOL_NUM WAIT
-syn match       tpKeyword           /AP_LD/
+syn keyword     tpKeyword           ABORT CALL CNT END FINE JMP JPOS LPOS MONITOR OVERRIDE PAUSE PAYLOAD POINT_LOGIC PULSE RESET RUN START STOP STOP_TRACKING TIMEOUT 
+syn match       tpKeyword           /AP_LD/	
 syn match       tpKeyword           /CNT/
 syn match       tpKeyword           /RT_LD/
 hi def link     tpKeyword           Keyword
 
 " Comments
-syn match       tpComment           /\(\s*\d*:\s*\)\@<=!.*/
+
+syn match       tpComment           /\(\s*\d*:\s*\)\@<=!.*/	contains=@spell
+syn match       tpComment           /\(\s*\d*:\s*\)\@<=--eg:.*/	contains=@spell
 syn match       tpRemark            /\(\s*\d*:\s*\)\@<=\/\/.*/
 hi def link     tpComment           Comment
 hi def link     tpRemark            Comment
