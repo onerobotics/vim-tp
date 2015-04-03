@@ -14,7 +14,7 @@ endif
 
 
 " Sysvars
-syn match       tpSysvar            /\.\?\$[a-zA-Z0-9.]\+/	
+syn match       tpSysvar            /\.\?\$[a-zA-Z0-9.]\+/
 hi def link     tpSysvar            Identifier
 
 " Identifiers
@@ -136,13 +136,12 @@ syn match       tpKeyword           /\(LOCK\|UNLOCK\) \(PREG\|VREG\)/
 syn match       tpKeyword           /\(OFFSET\|TOOL_OFFSET\|VOFFSET\) CONDITION/
 syn match       tpKeyword           /SKIP CONDITION/
 syn keyword     tpKeyword           ABORT CALL CNT END FINE JMP JPOS LPOS MONITOR OVERRIDE PAUSE PAYLOAD POINT_LOGIC PULSE RESET RUN START STOP STOP_TRACKING TIMEOUT 
-syn match       tpKeyword           /AP_LD/	
+syn match       tpKeyword           /AP_LD/
 syn match       tpKeyword           /CNT/
 syn match       tpKeyword           /RT_LD/
 hi def link     tpKeyword           Keyword
 
 " Comments
-
 syn match       tpComment           /\(\s*\d*:\s*\)\@<=!.*/	contains=@spell
 syn match       tpComment           /\(\s*\d*:\s*\)\@<=--eg:.*/	contains=@spell
 syn match       tpRemark            /\(\s*\d*:\s*\)\@<=\/\/.*/
