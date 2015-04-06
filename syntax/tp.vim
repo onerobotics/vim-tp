@@ -127,7 +127,6 @@ syn match       tpOperator          />/
 syn match       tpOperator          /</
 syn match       tpOperator          />=/
 syn match       tpOperator          /<=/
-"syn match       tpOperator          /./
 syn keyword     tpOperator          AND DIV MOD OR
 hi def link     tpOperator          Operator
 
