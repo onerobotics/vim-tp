@@ -50,7 +50,7 @@ hi def link     tpMod               Special
 
 " String Functions
 syn keyword     tpString            FINDSTR STRLEN SUBSTR
-hi def link     tpString            Special 
+hi def link     tpString            Special
 
 " Data
 syn region      tpData              start="AI\[" end="\]"     contains=tpInteger,tpItemComment
@@ -165,7 +165,7 @@ hi def link     tpComment           Comment
 hi def link     tpRemark            Comment
 
 " Header stuff
-syn keyword     tpHeader            OWNER ASCBIN MNEDITOR COMMENT PROG_SIZE CREATE DATE TIME MODIFIED FILE_NAME VERSION LINE_COUNT MEMORY_SIZE PROTECT READ_WRITE TCD STACK_SIZE TASK_PRIORITY TIME_SLICE BUSY_LAMP_OFF ABORT_REQUEST PAUSE_REQUEST DEFAULT_GROUP CONTROL_CODE
+syn keyword     tpHeader            OWNER ASCBIN MNEDITOR COMMENT PROG_SIZE CREATE DATE TIME MODIFIED FILE_NAME VERSION LINE_COUNT MEMORY_SIZE PROTECT READ_WRITE TCD STACK_SIZE TASK_PRIORITY TIME_SLICE BUSY_LAMP_OFF ABORT_REQUEST PAUSE_REQUEST DEFAULT_GROUP CONTROL_CODE AUTO_SINGULARITY_HEADER ENABLE_SINGULARITY_AVOIDANCE
 hi def link     tpHeader            Define
 
 let b:current_syntax = "tp"
