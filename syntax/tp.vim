@@ -39,6 +39,7 @@ syn match       tpUnits             /deg/
 syn match       tpUnits             /mm\/sec/
 syn match       tpUnits             /cm\/min/
 syn match       tpUnits             /deg\/sec/
+syn match       tpUnits             /in\/min/
 hi def link     tpUnits             Special
 
 " Modifiers
