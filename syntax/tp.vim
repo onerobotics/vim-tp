@@ -21,7 +21,7 @@ syn match       tpIdentifier        /[a-zA-Z0-9]\+/
 hi def link     tpIdentifier        Identifier
 
 " Conditional
-syn keyword     tpConditional       IF ELSE SELECT FOR TO DOWNTO ENDFOR
+syn keyword     tpConditional       IF THEN ENDIF ELSE SELECT FOR TO DOWNTO ENDFOR
 hi def link     tpConditional       Conditional
 
 " Constants
@@ -39,17 +39,19 @@ syn match       tpUnits             /deg/
 syn match       tpUnits             /mm\/sec/
 syn match       tpUnits             /cm\/min/
 syn match       tpUnits             /deg\/sec/
+syn match       tpUnits             /in\/min/
 hi def link     tpUnits             Special
 
 " Modifiers
-syn match       tpModifier          /ACC/
-syn match       tpModifier          /Skip/
-syn keyword     tpModifier          DA DB INC Offset PTH TA TB Tool_Offset VOffset
-hi def link     tpModifier          Function
+syn match       tpMod               /ACC/
+syn match       tpMod               /Skip/
+syn match       tpMod               /PSPD/
+syn keyword     tpMod               DA DB INC Offset PTH TA TB Tool_Offset VOFFSET BREAK Wjnt
+hi def link     tpMod               Special
 
 " String Functions
-syn keyword     tpStringFunction    FINDSTR STRLEN SUBSTR
-hi def link     tpStringFunction    Function
+syn keyword     tpString            FINDSTR STRLEN SUBSTR
+hi def link     tpString            Special
 
 " Data
 syn region      tpData              start="AI\[" end="\]"     contains=tpInteger,tpItemComment
@@ -78,7 +80,13 @@ syn region      tpData              start="TIMER_OVERFLOW\[" end="\]"  contains=
 syn region      tpData              start="UALM\[" end="\]"   contains=tpInteger,tpItemComment
 syn region      tpData              start="UFRAME\[" end="\]" contains=tpInteger,tpItemComment
 syn region      tpData              start="UTOOL\[" end="\]"  contains=tpInteger,tpItemComment
-syn keyword     tpData              ERROR_PROG
+syn region      tpData              start="MESSAGE\[" end="\]"  contains=tpInteger,tpItemComment
+syn region      tpData              start="JOINT_MAX_SPEED\[" end="\]"  contains=tpInteger,tpItemComment
+syn region      tpData              start="PAYLOAD\[" end="\]"  contains=tpInteger,tpItemComment
+syn region      tpData              start="FOUND_POS\[" end="\]"  contains=tpInteger,tpItemComment
+syn region      tpData              start="MES\[" end="\]"  contains=tpInteger,tpItemComment
+syn region      tpData              start="DIAG_REC\[" end="\]"  contains=tpInteger,tpItemComment
+syn region      tpData              start="DIAG_REC_SEC\[" end="\]"  contains=tpInteger,tpItemComment
 hi def link     tpData              Type
 
 " Item comment
@@ -107,7 +115,7 @@ hi def link     tpInteger           Number
 hi def link     tpFloat             Float
 
 " Motion
-syn match       tpMotion            /\(C\|J\|L\)\( P\)\@=/
+syn match       tpMotion            /\(A\|C\|J\|L\)\( P\)\@=/
 hi def link     tpMotion            Special
 
 " Operators
@@ -131,23 +139,34 @@ syn match       tpKeyword           /\/MN/
 syn match       tpKeyword           /\/POS/
 syn match       tpKeyword           /\/END/
 syn match       tpKeyword           /COL GUARD ADJUST/
+syn match       tpKeyword           /COL DETECT ON/
+syn match       tpKeyword           /COL DETECT OFF/
+syn match       tpKeyword           /STICK DETECT ON/
+syn match       tpKeyword           /STICK DETECT OFF/
 syn match       tpKeyword           /\(LOCK\|UNLOCK\) \(PREG\|VREG\)/
-syn match       tpKeyword           /\(OFFSET\|TOOL_OFFSET\|VOFFSET\) CONDITION/
 syn match       tpKeyword           /SKIP CONDITION/
-syn keyword     tpKeyword           ABORT CALL CNT END FINE JMP JPOS LPOS MONITOR OVERRIDE PAUSE PAYLOAD POINT_LOGIC PULSE RESET RUN START STOP STOP_TRACKING TIMEOUT UFRAME_NUM UTOOL_NUM WAIT
+syn match       tpKeyword           /ERR_NUM/
+syn match       tpKeyword           /LINEAR_MAX_SPEED/
+syn match       tpKeyword           /MODELID/
+syn match       tpKeyword           /ENC/
+syn keyword     tpKeyword           ABORT CALL END FINE JMP JPOS LPOS MONITOR OVERRIDE PAUSE POINT_LOGIC PULSE RESET RUN START STOP STOP_TRACKING TIMEOUT UFRAME_NUM UTOOL_NUM WAIT RUN_FIND GET_OFFSET GET_PASSFAIL GET_NFOUND SET REFERENCE CAMER_CALIB GET_READING CONDITION TOOL_OFFSET OFFSET
 syn match       tpKeyword           /AP_LD/
 syn match       tpKeyword           /CNT/
+syn match       tpKeyword           /CR/
 syn match       tpKeyword           /RT_LD/
+syn match	tpKeyword           /$WAITTMOUT/
+syn match	tpKeyword           /ERROR_PROG/
 hi def link     tpKeyword           Keyword
 
 " Comments
-syn match       tpComment           /\(\s*\d*:\s*\)\@<=!.*/
+syn match       tpComment           /\(\s*\d*:\s*\)\@<=!.*/	contains=@spell
+syn match       tpComment           /\(\s*\d*:\s*\)\@<=--eg:.*/	contains=@spell
 syn match       tpRemark            /\(\s*\d*:\s*\)\@<=\/\/.*/
 hi def link     tpComment           Comment
 hi def link     tpRemark            Comment
 
 " Header stuff
-syn keyword     tpHeader            OWNER ASCBIN MNEDITOR COMMENT PROG_SIZE CREATE DATE TIME MODIFIED FILE_NAME VERSION LINE_COUNT MEMORY_SIZE PROTECT READ_WRITE TCD STACK_SIZE TASK_PRIORITY TIME_SLICE BUSY_LAMP_OFF ABORT_REQUEST PAUSE_REQUEST DEFAULT_GROUP CONTROL_CODE
+syn keyword     tpHeader            OWNER ASCBIN MNEDITOR COMMENT PROG_SIZE CREATE DATE TIME MODIFIED FILE_NAME VERSION LINE_COUNT MEMORY_SIZE PROTECT READ_WRITE TCD STACK_SIZE TASK_PRIORITY TIME_SLICE BUSY_LAMP_OFF ABORT_REQUEST PAUSE_REQUEST DEFAULT_GROUP CONTROL_CODE AUTO_SINGULARITY_HEADER ENABLE_SINGULARITY_AVOIDANCE
 hi def link     tpHeader            Define
 
 let b:current_syntax = "tp"
