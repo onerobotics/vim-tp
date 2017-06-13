@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.ls setf tp
+au BufNewFile,BufRead \c*.ls setf tp
