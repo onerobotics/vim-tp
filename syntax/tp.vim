@@ -1,8 +1,9 @@
 " Vim syntax file
-" Language: FANUC TP
-" Author:   Jay Strybis <jay.strybis@gmail.com>
-" URL:      http://github.com/onerobotics/vim-tp
-" License:  MIT
+" Language: 	FANUC TP
+" Author:   	Jay Strybis <jay.strybis@gmail.com>
+" Contributors: Ben Coady
+" URL:      	http://github.com/onerobotics/vim-tp
+" License:  	MIT
 
 if exists("b:current_syntax")
   finish
@@ -160,7 +161,7 @@ hi def link     tpKeyword           Keyword
 
 " Comments
 syn match       tpComment           /\(\s*\d*:\s*\)\@<=!.*/	contains=@spell
-syn match       tpComment           /\(\s*\d*:\s*\)\@<=--eg:.*/	contains=@spell
+syn region      tpComment           start="--eg:" end=";" contains=@spell
 syn match       tpRemark            /\(\s*\d*:\s*\)\@<=\/\/.*/
 hi def link     tpComment           Comment
 hi def link     tpRemark            Comment
