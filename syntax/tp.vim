@@ -45,9 +45,11 @@ hi def link     tpUnits             Special
 
 " Modifiers
 syn match       tpMod               /ACC/
+syn match       tpMod               /AP_LD/
+syn match       tpMod               /RT_LD/
 syn match       tpMod               /Skip/
 syn match       tpMod               /PSPD/
-syn keyword     tpMod               DA DB INC Offset PTH TA TB Tool_Offset VOFFSET BREAK Wjnt
+syn keyword     tpMod               DA DB INC MROT Offset PTH TA TB Tool_Offset VOFFSET BREAK Wjnt
 hi def link     tpMod               Special
 
 " String Functions
@@ -76,6 +78,7 @@ syn region      tpData              start="UI\[" end="\]"     contains=tpInteger
 syn region      tpData              start="UO\[" end="\]"     contains=tpInteger,tpItemComment
 syn region      tpData              start="VR\[" end="\]"     contains=tpInteger,tpItemComment
 syn region      tpData              start="RESUME_PROG\[" end="\]"     contains=tpInteger,tpItemComment
+syn region      tpData              start="SEMAPHORE\[" end="\]"     contains=tpInteger,tpItemComment
 syn region      tpData              start="TIMER\[" end="\]"  contains=tpInteger,tpItemComment
 syn region      tpData              start="TIMER_OVERFLOW\[" end="\]"  contains=tpInteger,tpItemComment
 syn region      tpData              start="UALM\[" end="\]"   contains=tpInteger,tpItemComment
@@ -140,21 +143,19 @@ syn match       tpKeyword           /\/MN/
 syn match       tpKeyword           /\/POS/
 syn match       tpKeyword           /\/END/
 syn match       tpKeyword           /COL GUARD ADJUST/
-syn match       tpKeyword           /COL DETECT ON/
-syn match       tpKeyword           /COL DETECT OFF/
+syn match       tpKeyword           /COL DETECT/
 syn match       tpKeyword           /STICK DETECT ON/
 syn match       tpKeyword           /STICK DETECT OFF/
 syn match       tpKeyword           /\(LOCK\|UNLOCK\) \(PREG\|VREG\)/
 syn match       tpKeyword           /SKIP CONDITION/
 syn match       tpKeyword           /ERR_NUM/
 syn match       tpKeyword           /LINEAR_MAX_SPEED/
-syn match       tpKeyword           /MODELID/
 syn match       tpKeyword           /ENC/
-syn keyword     tpKeyword           ABORT CALL END FINE JMP JPOS LPOS MONITOR OVERRIDE PAUSE POINT_LOGIC PULSE RESET RUN START STOP STOP_TRACKING TIMEOUT UFRAME_NUM UTOOL_NUM WAIT RUN_FIND GET_OFFSET GET_PASSFAIL GET_NFOUND SET REFERENCE CAMER_CALIB GET_READING CONDITION TOOL_OFFSET OFFSET
-syn match       tpKeyword           /AP_LD/
+syn keyword     tpKeyword           ABORT CALL END FINE JMP JPOS LPOS MONITOR OVERRIDE PAUSE POINT_LOGIC PULSE RESET RUN START STOP STOP_TRACKING TIMEOUT UFRAME_NUM UTOOL_NUM WAIT RUN_FIND
+syn match	tpKeyword	    /VISION \(RUN_FIND\|GET_OFFSET\|GET_PASSFAIL\|GET_NFOUND\|SET_REFERENCE\|OVERRIDE\|CAMERA_CALIB\|GET_READING\)/
 syn match       tpKeyword           /CNT/
 syn match       tpKeyword           /CR/
-syn match       tpKeyword           /RT_LD/
+syn match       tpKeyword           /\(OFFSET\|TOOL_OFFSET\|VOFFSET\) CONDITION/
 syn match	tpKeyword           /$WAITTMOUT/
 syn match	tpKeyword           /ERROR_PROG/
 hi def link     tpKeyword           Keyword
